@@ -4,6 +4,7 @@ import {style} from "./styles"
 import Header from "./components/Header";
 import Search from "./components/Search";
 import AdviseArts from "./components/AdviseArts";
+import AdvisePL from "./components/AdvisePL";
 
 export default function HomePage() {
     const data = [{
@@ -20,6 +21,7 @@ export default function HomePage() {
             <Header/>
             <Search/>
             <AdviseArts/>
+            <AdvisePL/>
             </>
         }}
         renderItem={() => {
