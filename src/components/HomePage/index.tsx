@@ -2,6 +2,8 @@ import React from "react";
 import { FlatList, View, StatusBar } from "react-native"
 import {style} from "./styles"
 import Header from "./components/Header";
+import Search from "./components/Search";
+import AdviseArts from "./components/AdviseArts";
 
 export default function HomePage() {
     const data = [{
@@ -14,7 +16,11 @@ export default function HomePage() {
         style={style.main}
         data={data}
         ListHeaderComponent={()=>{
-            return <Header/>
+            return<> 
+            <Header/>
+            <Search/>
+            <AdviseArts/>
+            </>
         }}
         renderItem={() => {
             return <View />
