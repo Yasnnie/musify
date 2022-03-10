@@ -1,20 +1,10 @@
 import { StyleSheet } from "react-native";
 import { theme} from "../../../../lib/theme"
 export const style = StyleSheet.create({
-    container:{
-        marginHorizontal:8
-    },
-    title:{
-        fontFamily:"MontBold",
-        color: theme.white,
-        fontSize:20,
-        marginBottom:12,
-        marginLeft: 8
-    },
+
     mainCard:{
         overflow:"hidden",
         position:"relative",
-        marginHorizontal:8,
         borderRadius:16, 
     },
     cardContainer:{

@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, FlatList, ImageBackground } from "react-native"
+import TitleTopics from "../../../TitleTopics";
 import {style} from "./styles"
 
 interface CardAdvisePL{
@@ -32,13 +33,14 @@ export default function AdvisePL() {
         </ImageBackground>
     }
 
-    return <View style={style.container}>
-        <Text style={style.title}>Playlists para você</Text>
+    return <>
+        <TitleTopics >Playlists para você</TitleTopics >
         <FlatList
             data={data}
             renderItem={(item) => CardAdvisePL(item)}
+            ItemSeparatorComponent={()=> {return <View style={{ width:16}}/>}}
             horizontal
             showsHorizontalScrollIndicator={false}
         />
-    </View>
+    </>
 }

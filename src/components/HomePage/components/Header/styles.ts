@@ -5,7 +5,6 @@ export const style = StyleSheet.create({
     container:{
         flexDirection:"row",
         justifyContent:"space-between",
-        paddingHorizontal:16,
         marginTop:16
     },
     imageProfile:{

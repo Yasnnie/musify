@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, FlatList, ImageBackground, TouchableOpacity } from "react-native"
 import { LinearGradient } from 'expo-linear-gradient';
+import TitleTopics from "../../../TitleTopics";
 import { style } from "./styles"
 
 interface ArtsProps {
@@ -47,13 +48,14 @@ export default function AdviseArts() {
         </TouchableOpacity>
     }
 
-    return <View style={style.container}>
-        <Text style={style.title}>Artistas recomendados</Text>
+    return <>
+        <TitleTopics>Artistas recomendados</TitleTopics>
         <FlatList
             data={data}
+            ItemSeparatorComponent={()=> {return <View style={{ width:16}}/>}}
             renderItem={(item) => CardArts(item)}
             horizontal
             showsHorizontalScrollIndicator={false}
         />
-    </View>
+    </>
 }
