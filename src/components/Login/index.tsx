@@ -1,9 +1,9 @@
 import React from "react";
-import { ScrollView, ImageBackground, Text, View, TouchableOpacity } from "react-native"
+import { ScrollView, ImageBackground, Text, View, TouchableOpacity, Linking } from "react-native"
 import { StatusBar } from "expo-status-bar";
 import Input from "../Input";
 import { style } from "./styles";
-
+import { ServiceLogin } from "../../services/login";
 import Fundo from "../../assets/Fundo.png"
 export default function Login() {
     return <>
@@ -22,7 +22,7 @@ export default function Login() {
                     </TouchableOpacity>
                 </View>
                  
-                <TouchableOpacity style={style.button}>
+                <TouchableOpacity style={style.button} onPress={()=> {Linking.openURL("https://accounts.spotify.com/authorize/?client_id=0d400a35e08c48f5bf40e68bcf914e4d&response_type=code&redirect_uri=com.yasnnie.musify://callback")}}>
                     <Text style={style.textButton}>Entrar</Text>
                 </TouchableOpacity>
             </View>
