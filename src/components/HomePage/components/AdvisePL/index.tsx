@@ -1,33 +1,21 @@
 import React from "react";
 import { View, Text, FlatList, ImageBackground } from "react-native"
+import Genres from "../../../../../@types/Genres";
 import TitleTopics from "../../../TitleTopics";
 import {style} from "./styles"
 
-interface CardAdvisePL{
-    name:string,
-    image:string
+
+
+interface AdvisePLProps{
+    genres: Genres[]
 }
 
-export default function AdvisePL() {
-    const data = [
-        {
-            name: "Rap underground",
-            image: "https://t2.genius.com/unsafe/327x218/https%3A%2F%2Fimages.rapgenius.com%2F07104efc04e64a6c52e70b520a896eec.500x333x1.jpg"
-        },
-        {
-            name: "Músicas para andar de skate",
-            image: "https://revolutionradio.com.br/wp-content/uploads/Duane-Peters.jpg"
-        },
-        {
-            name: "Lo-fi Hip-hop",
-            image: "https://lh3.googleusercontent.com/vQwKzQ9Q4Uu0K6j-UcB8M9tmRq8HstfPlwRduP_k5IdlUAq0J_ziIfLv3NBSwwrGQsXjUW-gOEsNOXxB0I11lWPH9g=w640-h400-e365-rj-sc0x00ffffff"
-        }
-    ]
-
-    function CardAdvisePL(props:{item: CardAdvisePL, index: number}){
+export default function AdvisePL({genres}:AdvisePLProps) {
+    
+    function CardAdvisePL(props:{item: Genres, index: number}){
         return <ImageBackground 
         style={style.card}
-        source={{uri:props.item.image}}
+        source={{uri:"https://is3-ssl.mzstatic.com/image/thumb/Features125/v4/7b/42/b9/7b42b98f-0be0-7fa6-40a1-c59c2d460a60/mzl.xxsyszlu.png/800x800cc.jpg"}}
         >
             <Text style={style.text}>{props.item.name}</Text>
         </ImageBackground>
@@ -36,7 +24,7 @@ export default function AdvisePL() {
     return <>
         <TitleTopics >Playlists para você</TitleTopics >
         <FlatList
-            data={data}
+            data={genres}
             renderItem={(item) => CardAdvisePL(item)}
             ItemSeparatorComponent={()=> {return <View style={{ width:16}}/>}}
             horizontal

@@ -12,7 +12,7 @@ export default function TopMusic({music}:TopMusicProps) {
             <Image source={{uri:music.image}} width={54} height={54} style={style.image}/>
             <View >
                 <Text style={[style.text,style.titleMusic]}>{music.title}</Text>
-                <Text style={[style.text,style.nameArtist]}>{music.artist}</Text>
+                <Text style={[style.text,style.nameArtist]}>{music.artist.name}</Text>
             </View>
         </View>
 
